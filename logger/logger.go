@@ -11,13 +11,15 @@ const DefaultLevel string = "info"
 type Logger struct {
 	Path  string
 	Level string
+	UnusedExt string
+	unused string
 }
 
 func NewLogger(path string) (*Logger, error) {
 	if path == "" {
 		return nil, errors.New("Path is required")
 	} else {
-		return &Logger{path, DefaultLevel}, nil
+		return &Logger{Path: path, Level: DefaultLevel}, nil
 	}
 }
 
